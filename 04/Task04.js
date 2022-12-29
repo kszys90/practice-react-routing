@@ -9,8 +9,13 @@ const Task04 = () => {
     const history = useHistory()
 
     const handleClick = (e) => {
+        const sortValues = ['price-asc', 'price-dsc']
         const filters = e.target.value
-        history.push(`/task04/${filters}`)
+        if (sortValues.includes(filters)) {
+            history.push(`/task04/${filters}`)
+        } else {
+            history.push('/404')
+        }
     }
     return (
         <>
