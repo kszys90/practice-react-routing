@@ -1,10 +1,10 @@
 import React from 'react';
-import Product from './Product';
+import { Product } from './Product';
 
-const Shop = (products) => {
+const Shop = (props) => {
     return (
         <section>
-            { products.map(p => <Product {...p} />)}
+            {props.items.map(p => <Product product={p} key={p.id} />)}
         </section>
     );
 }
